@@ -1,8 +1,7 @@
-import { Calendar, Clock, MapPin, Music, Utensils, Sparkles } from 'lucide-react';
+import { Calendar, Clock, MapPin, Sparkles } from 'lucide-react';
 
 export default function Events() {
   const events = [
-    
     {
       icon: Sparkles,
       title: 'Wedding Ceremony',
@@ -15,23 +14,21 @@ export default function Events() {
       gradient: 'from-rose-50 to-pink-50',
       iconBg: 'bg-gradient-to-br from-rose-400 to-pink-500',
     },
-   
   ];
 
   return (
     <section id="events" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">
-            Wedding Events
-          </h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">Wedding Events</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-amber-400 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Join us in celebrating our special days with multiple events filled with love, laughter, and joy.
+            Join us in celebrating our special days with multiple events filled with love, laughter,
+            and joy.
           </p>
         </div>
 
-       <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8 place-items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8 place-items-center">
           {events.map((event, index) => {
             const Icon = event.icon;
             return (
@@ -39,10 +36,14 @@ export default function Events() {
                 key={index}
                 className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                ></div>
 
                 <div className="relative p-8">
-                  <div className={`w-20 h-20 rounded-2xl ${event.iconBg} flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <div
+                    className={`w-20 h-20 rounded-2xl ${event.iconBg} flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
+                  >
                     <Icon className="w-10 h-10 text-white" />
                   </div>
 
@@ -84,9 +85,7 @@ export default function Events() {
                   </div>
 
                   <div className="pt-6 border-t border-gray-100">
-                    <p className="text-gray-600 leading-relaxed">
-                      {event.description}
-                    </p>
+                    <p className="text-gray-600 leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +97,9 @@ export default function Events() {
           <div className="text-center mb-8">
             <h3 className="font-serif text-3xl text-gray-800 mb-4">Main Venue Location</h3>
             <p className="text-gray-600 mb-2">Royal Convention</p>
-            <p className="text-gray-600">8, Seetharama Kovela, beside BMW Car showroom, Mangalagiri, Andhra Pradesh 522503</p>
+            <p className="text-gray-600">
+              8, Seetharama Kovela, beside BMW Car showroom, Mangalagiri, Andhra Pradesh 522503
+            </p>
           </div>
 
           <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg">

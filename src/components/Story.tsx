@@ -1,9 +1,7 @@
 import { Heart, Sparkles, Calendar } from 'lucide-react';
-import Growing_Together from "../../public/assets/Growing_Together.jpg";
-import First_meet from "../../public/assets/First_meet.jpg";
-import BJ_logo from "../../public/assets/BJ-logo.png";
-import BJ_LOGO3 from "../../public/assets/BG_LOGO3.jpg";
-
+import growingTogether from '/assets/BJ2.jpg';
+import firstMeet from '/assets/BJ4.jpg';
+import logoImage from '/assets/BG_LOGO3.jpg';
 
 export default function Story() {
   return (
@@ -30,17 +28,19 @@ export default function Story() {
               </div>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              On 09/11/2025, our families arranged our first meeting. It started as simple conversation soon turned into an unexpected 30 min filled with laughter and meaningful connection. We realised how much we had in common. By the end, we are clear that something special had started that evening.
+              On 09/11/2025, our families arranged our first meeting. It started as simple
+              conversation soon turned into an unexpected 30 min filled with laughter and
+              meaningful connection. We realised how much we had in common. By the end, we are
+              clear that something special had started that evening.
             </p>
           </div>
           <div className="order-1 md:order-2">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={BJ_LOGO3}
+                src={logoImage}
                 alt="First meeting"
                 className="w-full h-full object-cover object-center"
               />
-
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function Story() {
           <div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={Growing_Together}
+                src={growingTogether}
                 alt="Growing together"
                 className="w-full h-full object-cover object-center"
               />
@@ -66,11 +66,11 @@ export default function Story() {
               </div>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Guess what? On November 21, 2025, we're opening the family doors for our wedding prep!
-              How exciting, right? But there's a slight hiccup—our parents are playing the role of
-              'No Phone Zone' enforcers, blocking us from trading contact numbers. It's like trying to
-              plan a heist without the map! But no worries, we can't wait to reunite, even if we have
-              to send smoke signals to connect! 
+              Guess what? On November 21, 2025, we're opening the family doors for our wedding
+              prep! How exciting, right? But there's a slight hiccup—our parents are playing the
+              role of 'No Phone Zone' enforcers, blocking us from trading contact numbers. It's like
+              trying to plan a heist without the map! But no worries, we can't wait to reunite, even
+              if we have to send smoke signals to connect!
             </p>
           </div>
         </div>
@@ -87,18 +87,18 @@ export default function Story() {
               </div>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              On an absolutely stunning morning, Bhargav decided it was time to upgrade from boyfriend
-              to fiancé. With the city blinking in awe, he knelt down and made a heartfelt proposal to
-              the equally enchanting Jagadeeswari. And of course, with happy tears (and probably a bit
-              of snot), she shouted 'Yes!' louder than a kid asking for ice cream! Now we're both
-              knee-deep in planning our big love circus and we're just dying to party with our family and
-              friends—hope they're ready for our epic love fest!
+              On an absolutely stunning morning, Bhargav decided it was time to upgrade from
+              boyfriend to fiancé. With the city blinking in awe, he knelt down and made a heartfelt
+              proposal to the equally enchanting Jagadeeswari. And of course, with happy tears (and
+              probably a bit of snot), she shouted 'Yes!' louder than a kid asking for ice cream!
+              Now we're both knee-deep in planning our big love circus and we're just dying to party
+              with our family and friends—hope they're ready for our epic love fest!
             </p>
           </div>
           <div className="order-1 md:order-2">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <img
-                 src={First_meet}
+                src={firstMeet}
                 alt="The proposal"
                 className="w-full h-full object-cover"
               />

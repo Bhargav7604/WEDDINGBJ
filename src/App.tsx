@@ -4,7 +4,6 @@ import Home from './components/Home';
 import Story from './components/Story';
 import Events from './components/Events';
 import Gallery from './components/Gallery';
-import RSVP from './components/RSVP';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
@@ -15,6 +14,7 @@ function App() {
   const handleNavigate = (section: string) => {
     setActiveSection(section);
     const element = document.getElementById(section);
+
     if (element) {
       const offset = 64;
       const elementPosition = element.getBoundingClientRect().top;
@@ -34,6 +34,7 @@ function App() {
 
       for (const section of sections) {
         const element = document.getElementById(section);
+
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
@@ -57,7 +58,6 @@ function App() {
       <Story />
       <Events />
       <Gallery />
-      {/* <RSVP /> */}
       <Contact />
       <Footer />
       <FloatingActions />

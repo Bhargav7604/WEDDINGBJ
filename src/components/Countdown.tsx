@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react';
-
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+import { TimeLeft } from '../types';
 
 export default function Countdown() {
   const weddingDate = new Date('2026-02-22T11:55:00').getTime();

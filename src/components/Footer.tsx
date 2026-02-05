@@ -16,9 +16,7 @@ export default function Footer() {
 
           <div className="h-px w-32 bg-gray-700 mx-auto mb-6"></div>
 
-          <p className="text-gray-500 text-sm">
-            Made with love for our special day
-          </p>
+          <p className="text-gray-500 text-sm">Made with love for our special day</p>
         </div>
       </div>
     </footer>

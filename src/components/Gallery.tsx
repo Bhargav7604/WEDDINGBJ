@@ -1,66 +1,36 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import BJ2 from "../../public/assets/BJ2.jpg";
-import BJ3 from "../../public/assets/BJ3.jpg";
-import BJ4 from "../../public/assets/BJ4.jpg";
-import BJ5 from "../../public/assets/BJ5.jpg";
-
-import BJ6 from "../../public/assets/BJ6.jpg";
-import Groom_family from "../../public/assets/Groom_family.jpg";
-import Groom_family2 from "../../public/assets/Groom_family2.jpg";
-// import BJ_FAMILY from "../../public/assets/BJ_FAMILY.jpg";
-import BJ_FAMILY2 from "../../public/assets/BJ_FAMILY2.jpg";
-import BJ_FAMILY3 from "../../public/assets/BJ_FAMILY3.jpg";
+import { PhotoItem } from '../types';
+import image1 from '/assets/BJ3.jpg';
+import image2 from '/assets/BJ6.jpg';
+import image3 from '/assets/BJ4.jpg';
+import image4 from '/assets/BJ_FAMILY.jpg';
+import image5 from '/assets/BJ2.jpg';
+import image6 from '/assets/BJ_FAMILY3.jpg';
+import image7 from '/assets/BJ_FAMILY2.jpg';
+import image8 from '/assets/BJ5.jpg';
+import image9 from '/assets/BJ1.jpg';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const photos = [
-    {
-      url: BJ3,
-      alt: 'Couple portrait',
-    },
-    {
-      url: BJ6,
-      alt: 'Romantic moment',
-    },
-    {
-      url: BJ4,
-      alt: 'Proposal moment',
-    },
-    {
-     url: Groom_family,
-      alt: 'Together at sunset',
-    },
-    {
-      url:BJ2 ,
-      alt: 'Happy couple',
-    },
-    {
-      url: BJ_FAMILY3,
-      alt: 'Engagement celebration',
-    },
-    {
-      url: BJ_FAMILY2,
-      alt: 'Adventure together',
-    },
-    {
-      url: BJ5,
-      alt: 'Sweet moments',
-    },
-    {
-      url: Groom_family2,
-      alt: 'Love story',
-    },
+  const photos: PhotoItem[] = [
+    { url: image1, alt: 'Couple portrait' },
+    { url: image2, alt: 'Romantic moment' },
+    { url: image3, alt: 'Proposal moment' },
+    { url: image4, alt: 'Together at sunset' },
+    { url: image5, alt: 'Happy couple' },
+    { url: image6, alt: 'Engagement celebration' },
+    { url: image7, alt: 'Adventure together' },
+    { url: image8, alt: 'Sweet moments' },
+    { url: image9, alt: 'Love story' },
   ];
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-rose-50 via-white to-amber-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">
-            Our Gallery
-          </h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">Our Gallery</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             A glimpse into our journey together, captured in beautiful moments.
           </p>

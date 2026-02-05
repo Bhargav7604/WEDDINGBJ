@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FileText, Download, Upload } from 'lucide-react';
 
 export default function InvitationPDF() {
-  const pdfUrl = '';
+  const pdfUrl = '/wedding-invitation.pdf';
 
   const handleDownload = () => {
     if (pdfUrl) {
@@ -44,14 +44,18 @@ export default function InvitationPDF() {
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
             {pdfUrl ? (
               <div>
-                <div className="aspect-[8.5/11] bg-gray-100 relative">
+                <div className="bg-gray-100 relative" style={{ minHeight: '600px' }}>
                   <iframe
-                    src={`${pdfUrl}#toolbar=0`}
-                    className="w-full h-full"
+                    src={pdfUrl}
+                    className="w-full"
+                    style={{ height: '600px' }}
                     title="Wedding Invitation PDF"
                   ></iframe>
                 </div>
                 <div className="p-8 bg-gradient-to-r from-pink-50 to-rose-50 text-center">
+                  <p className="text-gray-600 mb-4">
+                    Click below to download the invitation and share with your loved ones
+                  </p>
                   <button
                     onClick={handleDownload}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -79,14 +83,6 @@ export default function InvitationPDF() {
               </div>
             )}
           </div>
-
-          {!pdfUrl && (
-            <div className="mt-8 text-center">
-              <p className="text-sm text-gray-500">
-                To add your invitation PDF, upload it to Supabase Storage and update the pdfUrl variable
-              </p>
-            </div>
-          )}
         </motion.div>
       </div>
     </section>

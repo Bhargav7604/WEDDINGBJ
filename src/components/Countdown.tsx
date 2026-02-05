@@ -38,17 +38,20 @@ export default function Countdown() {
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto my-12">
-      {timeUnits.map((unit) => (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto my-12">
+      {timeUnits.map((unit, index) => (
         <div
           key={unit.label}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-rose-100 transform hover:scale-105 transition-transform"
+          className="relative group"
         >
-          <div className="text-4xl md:text-5xl font-bold text-rose-600 mb-2 font-serif">
-            {unit.value.toString().padStart(2, '0')}
-          </div>
-          <div className="text-gray-600 text-sm md:text-base font-medium uppercase tracking-wider">
-            {unit.label}
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+          <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border-2 border-white transform hover:scale-105 transition-all duration-300">
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-rose-500 to-pink-600 bg-clip-text text-transparent mb-2 font-serif">
+              {unit.value.toString().padStart(2, '0')}
+            </div>
+            <div className="text-gray-600 text-sm md:text-base font-semibold uppercase tracking-wider">
+              {unit.label}
+            </div>
           </div>
         </div>
       ))}

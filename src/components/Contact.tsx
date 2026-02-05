@@ -152,11 +152,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-white via-rose-50/30 to-amber-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Mail className="w-8 h-8 text-white" />
+            </div>
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">Get In Touch</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-32 h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Have questions or want to share something special? We'd love to hear from you.
           </p>
         </div>
@@ -165,46 +171,48 @@ export default function Contact() {
           <div>
             <h3 className="font-serif text-2xl text-gray-800 mb-6">Contact Information</h3>
             <div className="space-y-6 mb-12">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-rose-500" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">Email</h4>
-                  <p className="text-gray-600">bj.bhargavjagadeeshwariwedding.life</p>
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-rose-100">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <Mail className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Email</h4>
+                    <p className="text-gray-600">bj.bhargavjagadeeshwariwedding.life</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-amber-500" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">Phone</h4>
-                  <p className="text-gray-600">Bhargav: +91 91555 36665</p>
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-amber-100">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <Phone className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Phone</h4>
+                    <p className="text-gray-600">Bhargav: +91 91555 36665</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl p-8">
-              <h4 className="font-serif text-xl text-gray-800 mb-4">Wedding Coordinators</h4>
-              <div className="space-y-3 text-gray-600">
-                <p>
-                  <span className="font-medium">Bride's Family:</span>
-                  <br />
-                  Contact: +91 98486 07476
-                </p>
-                <p>
-                  <span className="font-medium">Groom's Family:</span>
-                  <br />
-                  Contact: +91 98669 14668
-                </p>
+            <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 rounded-2xl p-8 shadow-lg border border-rose-100">
+              <h4 className="font-serif text-2xl text-gray-800 mb-6">Wedding Coordinators</h4>
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
+                  <p className="font-semibold text-gray-800 mb-1">Bride's Family</p>
+                  <p className="text-gray-600">Contact: +91 98486 07476</p>
+                </div>
+                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
+                  <p className="font-semibold text-gray-800 mb-1">Groom's Family</p>
+                  <p className="text-gray-600">Contact: +91 98669 14668</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="bg-gray-100 rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
               {emailStatus && (
                 <div
                   className={`mb-6 p-4 rounded-xl ${
@@ -304,7 +312,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-rose-500 text-white font-medium rounded-full hover:bg-rose-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl"
+                className="w-full px-6 py-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-semibold rounded-full hover:from-rose-600 hover:to-pink-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 {isSubmitting ? (
                   <>

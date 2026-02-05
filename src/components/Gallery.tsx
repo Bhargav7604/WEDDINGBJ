@@ -29,9 +29,15 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-rose-50 via-white to-amber-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg transform rotate-6">
+              <span className="text-3xl">📸</span>
+            </div>
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">Our Gallery</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-32 h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             A glimpse into our journey together, captured in beautiful moments.
           </p>
         </div>
@@ -41,13 +47,18 @@ export default function Gallery() {
             <div
               key={index}
               onClick={() => setSelectedImage(index)}
-              className="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer transform transition-all hover:scale-105 hover:shadow-2xl"
+              className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border-4 border-white"
             >
               <img
                 src={photo.url}
                 alt={photo.alt}
-                className="w-[600px] h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-white font-medium text-lg">{photo.alt}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

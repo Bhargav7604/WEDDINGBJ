@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Story from './components/Story';
+import EngagementTrailer from './components/EngagementTrailer';
+import InvitationVideo from './components/InvitationVideo';
+import InvitationPDF from './components/InvitationPDF';
 import Events from './components/Events';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -29,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'story', 'events', 'gallery', 'rsvp', 'contact'];
+      const sections = ['home', 'story', 'engagement', 'invitation-video', 'invitation-pdf', 'events', 'gallery', 'rsvp', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -56,6 +59,9 @@ function App() {
       <Navigation onNavigate={handleNavigate} activeSection={activeSection} />
       <Home onNavigate={handleNavigate} />
       <Story />
+      <EngagementTrailer />
+      <InvitationVideo />
+      <InvitationPDF />
       <Events />
       <Gallery />
       <Contact />

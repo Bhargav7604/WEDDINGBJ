@@ -5,6 +5,9 @@ export default function Navigation({ onNavigate, activeSection }: NavigationProp
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'story', label: 'Our Story' },
+    { id: 'engagement', label: 'Engagement' },
+    { id: 'invitation-video', label: 'Video' },
+    { id: 'invitation-pdf', label: 'Invitation' },
     { id: 'events', label: 'Events' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },

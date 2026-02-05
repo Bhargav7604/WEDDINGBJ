@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, Sparkles, Heart } from 'lucide-react';
+import { Calendar, Clock, MapPin, Church, Heart } from 'lucide-react';
 
 export default function Events() {
   return (
@@ -30,7 +30,7 @@ export default function Events() {
               <div className="flex flex-col md:flex-row md:items-start md:space-x-8">
                 <div className="flex-shrink-0 mb-8 md:mb-0">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-rose-400 via-pink-500 to-rose-500 flex items-center justify-center shadow-xl mx-auto md:mx-0 transform hover:scale-105 transition-transform duration-300">
-                    <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-white" />
+                    <Church className="w-12 h-12 md:w-16 md:h-16 text-white" />
                   </div>
                 </div>
 
@@ -87,7 +87,7 @@ export default function Events() {
 
                   <div className="bg-gradient-to-r from-rose-50/50 to-amber-50/50 rounded-xl p-6 border-l-4 border-rose-400">
                     <p className="text-gray-700 leading-relaxed italic">
-                      The sacred wedding ceremony where we begin our journey together.
+                      "Two souls with but a single thought, two hearts that beat as one. Join us as we unite in sacred matrimony and embark on our eternal journey of love."
                     </p>
                   </div>
                 </div>

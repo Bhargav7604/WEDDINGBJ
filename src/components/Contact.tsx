@@ -167,52 +167,55 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="font-serif text-2xl text-gray-800 mb-6">Contact Information</h3>
-            <div className="space-y-6 mb-12">
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-rose-100">
-                <div className="flex items-start space-x-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Mail className="w-7 h-7 text-white" />
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="space-y-6">
+            <h3 className="font-serif text-3xl text-gray-800 mb-8">Contact Information</h3>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-rose-100 h-full">
+              <div className="flex items-start space-x-5 mb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-rose-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-gray-800 mb-2 text-xl">Email</h4>
+                  <p className="text-gray-600 text-base">bj.bhargavjagadeeshwariwedding.life</p>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-100 pt-8 mb-8">
+                <div className="flex items-start space-x-5">
+                  <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Email</h4>
-                    <p className="text-gray-600">bj.bhargavjagadeeshwariwedding.life</p>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-gray-800 mb-2 text-xl">Phone</h4>
+                    <p className="text-gray-600 text-base">Bhargav: +91 91555 36665</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-amber-100">
-                <div className="flex items-start space-x-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Phone className="w-7 h-7 text-white" />
+              <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 rounded-2xl p-6">
+                <h4 className="font-serif text-xl text-gray-800 mb-5 flex items-center">
+                  <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
+                  Wedding Coordinators
+                </h4>
+                <div className="space-y-4">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-white shadow-sm">
+                    <p className="font-bold text-gray-800 mb-1 text-base">Bride's Family</p>
+                    <p className="text-gray-600">+91 98486 07476</p>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Phone</h4>
-                    <p className="text-gray-600">Bhargav: +91 91555 36665</p>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-white shadow-sm">
+                    <p className="font-bold text-gray-800 mb-1 text-base">Groom's Family</p>
+                    <p className="text-gray-600">+91 98669 14668</p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 rounded-2xl p-8 shadow-lg border border-rose-100">
-              <h4 className="font-serif text-2xl text-gray-800 mb-6">Wedding Coordinators</h4>
-              <div className="space-y-4 text-gray-700">
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
-                  <p className="font-semibold text-gray-800 mb-1">Bride's Family</p>
-                  <p className="text-gray-600">Contact: +91 98486 07476</p>
-                </div>
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4">
-                  <p className="font-semibold text-gray-800 mb-1">Groom's Family</p>
-                  <p className="text-gray-600">Contact: +91 98669 14668</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div>
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+          <div className="space-y-6">
+            <h3 className="font-serif text-3xl text-gray-800 mb-8">Send us a Message</h3>
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
               {emailStatus && (
                 <div
                   className={`mb-6 p-4 rounded-xl ${

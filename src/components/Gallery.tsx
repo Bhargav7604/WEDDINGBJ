@@ -42,22 +42,27 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {photos.map((photo, index) => (
             <div
               key={index}
               onClick={() => setSelectedImage(index)}
-              className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border-4 border-white"
+              className="group relative aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
               <img
                 src={photo.url}
                 alt={photo.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-medium text-lg">{photo.alt}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white font-semibold text-lg mb-1">{photo.alt}</p>
+                  <div className="w-16 h-1 bg-white/60 rounded-full"></div>
                 </div>
+              </div>
+              <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 shadow-lg">
+                <span className="text-rose-500 text-xl">+</span>
               </div>
             </div>
           ))}
@@ -66,23 +71,36 @@ export default function Gallery() {
 
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            className="absolute top-6 right-6 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110 group"
+            aria-label="Close"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-7 h-7 text-white group-hover:rotate-90 transition-transform duration-300" />
           </button>
 
-          <div className="relative max-w-5xl max-h-[90vh]">
-            <img
-              src={photos[selectedImage].url}
-              alt={photos[selectedImage].alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
+          <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-full px-6 py-3">
+            <p className="text-white font-medium text-sm">
+              {selectedImage + 1} / {photos.length}
+            </p>
+          </div>
+
+          <div className="relative max-w-6xl max-h-[85vh] w-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={photos[selectedImage].url}
+                alt={photos[selectedImage].alt}
+                className="max-w-full max-h-[85vh] w-full object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+
+            <div className="absolute -bottom-16 left-0 right-0 text-center">
+              <p className="text-white font-semibold text-lg">{photos[selectedImage].alt}</p>
+            </div>
 
             {selectedImage > 0 && (
               <button
@@ -90,9 +108,10 @@ export default function Gallery() {
                   e.stopPropagation();
                   setSelectedImage(selectedImage - 1);
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                className="absolute -left-20 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110 group"
+                aria-label="Previous"
               >
-                <span className="text-white text-2xl">‹</span>
+                <span className="text-white text-3xl font-light group-hover:-translate-x-1 transition-transform duration-300">‹</span>
               </button>
             )}
 
@@ -102,9 +121,10 @@ export default function Gallery() {
                   e.stopPropagation();
                   setSelectedImage(selectedImage + 1);
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                className="absolute -right-20 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110 group"
+                aria-label="Next"
               >
-                <span className="text-white text-2xl">›</span>
+                <span className="text-white text-3xl font-light group-hover:translate-x-1 transition-transform duration-300">›</span>
               </button>
             )}
           </div>

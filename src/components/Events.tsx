@@ -1,96 +1,107 @@
-import { Calendar, Clock, MapPin, Sparkles } from 'lucide-react';
+import { Calendar, Clock, MapPin, Sparkles, Heart } from 'lucide-react';
 
 export default function Events() {
-  const events = [
-    {
-      icon: Sparkles,
-      title: 'Wedding Ceremony',
-      date: 'February 22, 2026',
-      time: '11:55 AM - 1:00 PM',
-      location: 'Royal Convention',
-      address: 'Mangalagiri, Andhra Pradesh',
-      description: 'The sacred wedding ceremony where we begin our journey together.',
-      color: 'rose',
-      gradient: 'from-rose-50 to-pink-50',
-      iconBg: 'bg-gradient-to-br from-rose-400 to-pink-500',
-    },
-  ];
-
   return (
-    <section id="events" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="events" className="py-20 bg-gradient-to-br from-rose-50 via-white to-amber-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">Wedding Events</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-amber-400 mx-auto mb-6 rounded-full"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <div className="inline-block mb-4">
+            <div className="flex items-center justify-center space-x-2">
+              <Heart className="w-6 h-6 text-rose-500" fill="currentColor" />
+              <h2 className="font-serif text-4xl md:text-5xl text-gray-800">Wedding Events</h2>
+              <Heart className="w-6 h-6 text-rose-500" fill="currentColor" />
+            </div>
+          </div>
+          <div className="w-32 h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             Join us in celebrating our special days with multiple events filled with love, laughter,
             and joy.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8 place-items-center">
-          {events.map((event, index) => {
-            const Icon = event.icon;
-            return (
-              <div
-                key={index}
-                className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                ></div>
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400"></div>
 
-                <div className="relative p-8">
-                  <div
-                    className={`w-20 h-20 rounded-2xl ${event.iconBg} flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
-                  >
-                    <Icon className="w-10 h-10 text-white" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-rose-100/40 to-amber-100/40 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-pink-100/40 to-rose-100/40 rounded-full blur-3xl -z-0"></div>
+
+            <div className="relative p-8 md:p-12">
+              <div className="flex flex-col md:flex-row md:items-start md:space-x-8">
+                <div className="flex-shrink-0 mb-8 md:mb-0">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-rose-400 via-pink-500 to-rose-500 flex items-center justify-center shadow-xl mx-auto md:mx-0 transform hover:scale-105 transition-transform duration-300">
+                    <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-white" />
                   </div>
+                </div>
 
-                  <h3 className="font-serif text-2xl text-gray-800 mb-6 group-hover:text-gray-900 transition-colors">
-                    {event.title}
+                <div className="flex-1">
+                  <h3 className="font-serif text-3xl md:text-4xl text-gray-800 mb-6 text-center md:text-left">
+                    Wedding Ceremony
                   </h3>
 
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center flex-shrink-0">
-                        <Calendar className="w-5 h-5 text-rose-600" />
-                      </div>
-                      <div className="flex-1 pt-2">
-                        <p className="text-sm text-gray-500 font-medium">Date</p>
-                        <p className="text-gray-700 font-medium">{event.date}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
-                        <Clock className="w-5 h-5 text-amber-600" />
-                      </div>
-                      <div className="flex-1 pt-2">
-                        <p className="text-sm text-gray-500 font-medium">Time</p>
-                        <p className="text-gray-700 font-medium">{event.time}</p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 border border-rose-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 rounded-xl bg-white shadow-md flex items-center justify-center flex-shrink-0">
+                          <Calendar className="w-6 h-6 text-rose-600" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs text-rose-600 font-semibold uppercase tracking-wider mb-1">
+                            Date
+                          </p>
+                          <p className="text-gray-800 font-semibold text-lg">February 22, 2026</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <div className="flex-1 pt-2">
-                        <p className="text-sm text-gray-500 font-medium">Venue</p>
-                        <p className="text-gray-700 font-medium">{event.location}</p>
-                        <p className="text-sm text-gray-500">{event.address}</p>
+                    <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border border-amber-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 rounded-xl bg-white shadow-md flex items-center justify-center flex-shrink-0">
+                          <Clock className="w-6 h-6 text-amber-600" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs text-amber-600 font-semibold uppercase tracking-wider mb-1">
+                            Time
+                          </p>
+                          <p className="text-gray-800 font-semibold">11:30 AM - 1:00 PM</p>
+                          <p className="text-sm text-amber-700 mt-1">Muhurtham: 11:54 A.M.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-gray-100">
-                    <p className="text-gray-600 leading-relaxed">{event.description}</p>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100 mb-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-md flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs text-blue-600 font-semibold uppercase tracking-wider mb-1">
+                          Venue
+                        </p>
+                        <p className="text-gray-800 font-semibold text-lg">Royal Convention</p>
+                        <p className="text-gray-600 text-sm mt-1">Mangalagiri, Andhra Pradesh</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-rose-50/50 to-amber-50/50 rounded-xl p-6 border-l-4 border-rose-400">
+                    <p className="text-gray-700 leading-relaxed italic">
+                      The sacred wedding ceremony where we begin our journey together.
+                    </p>
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+
+            <div className="bg-gradient-to-r from-rose-500/5 to-amber-500/5 px-8 md:px-12 py-6 border-t border-gray-100">
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Heart className="w-4 h-4 text-rose-500" fill="currentColor" />
+                <p className="text-sm">We look forward to celebrating with you</p>
+                <Heart className="w-4 h-4 text-rose-500" fill="currentColor" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-rose-50 to-amber-50 rounded-2xl p-8 md:p-12">

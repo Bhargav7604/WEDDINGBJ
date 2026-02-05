@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, Heart } from 'lucide-react';
+import { Calendar, Clock, MapPin, Heart, Youtube } from 'lucide-react';
 import { GiTempleGate } from 'react-icons/gi';
 
 export default function Events() {
@@ -95,6 +95,39 @@ export default function Events() {
                 <Heart className="w-4 h-4 text-rose-500" fill="currentColor" />
                 <p className="text-sm">We look forward to celebrating with you</p>
                 <Heart className="w-4 h-4 text-rose-500" fill="currentColor" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-gradient-to-br from-rose-50 via-white to-amber-50 rounded-3xl shadow-2xl overflow-hidden border border-rose-100">
+            <div className="bg-gradient-to-r from-red-500 to-rose-500 px-8 py-6">
+              <div className="flex items-center justify-center space-x-3">
+                <Youtube className="w-8 h-8 text-white" fill="currentColor" />
+                <h3 className="font-serif text-3xl text-white">Watch Live</h3>
+                <Youtube className="w-8 h-8 text-white" fill="currentColor" />
+              </div>
+              <p className="text-center text-white/90 mt-2">Join us virtually for our special day</p>
+            </div>
+
+            <div className="p-6 md:p-8">
+              <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/LIVE_VIDEO_ID"
+                  title="Wedding Live Stream"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div className="mt-6 text-center">
+                <p className="text-gray-600 text-sm">
+                  The live stream will start on <span className="font-semibold text-rose-600">February 22, 2026 at 11:30 AM</span>
+                </p>
               </div>
             </div>
           </div>
